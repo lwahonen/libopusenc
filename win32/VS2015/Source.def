@@ -1,0 +1,12 @@
+LIBRARY OPUSENC
+EXPORTS  
+   ope_comments_create   @1  
+   ope_comments_add   @2  
+   ope_comments_destroy   @3
+   ope_encoder_create_file @4
+   ope_encoder_write   @5
+   ope_encoder_drain @6
+   ope_encoder_destroy @7
+   ope_get_version_string @8
+   ope_strerror @9
+
