@@ -145,9 +145,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
     <LibraryPath>$(ProjectDir)..\..\..\opus\win32\VS2015\win32\release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
-    <LibraryPath>$(ProjectDir)..\..\..\opus\win32\VS2015\win32\debug;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
     <LibraryPath>$(ProjectDir)..\..\..\opus\win32\VS2015\x64\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -160,9 +158,9 @@
       <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">Fast</FloatingPointModel>
       <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">Fast</FloatingPointModel>
       <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
-      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">NotSet</EnableEnhancedInstructionSet>
       <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
-      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">NotSet</EnableEnhancedInstructionSet>
       <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">Fast</FloatingPointModel>
       <FloatingPointModel Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">Fast</FloatingPointModel>
       <FloatingPointExceptions Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">false</FloatingPointExceptions>
@@ -180,22 +178,22 @@
       <Message>Generating version.h</Message>
     </PreBuildEvent>
     <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">..\..\..\opus\win32\VS2015\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">C:\libraries\opus\win32\VS2015\Win32\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">opus.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">Source.def</ModuleDefinitionFile>
     </Link>
     <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">..\..\..\opus\win32\VS2015\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">C:\libraries\opus\win32\VS2015\Win32\Release</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">opus.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">Source.def</ModuleDefinitionFile>
     </Link>
     <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">..\..\..\opus\win32\VS2015\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">C:\libraries\opus\win32\VS2015\x64\Debug\</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">opus.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">Source.def</ModuleDefinitionFile>
     </Link>
     <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">..\..\..\opus\win32\VS2015\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">C:\libraries\opus\win32\VS2015\x64\Release</AdditionalLibraryDirectories>
       <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">opus.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">Source.def</ModuleDefinitionFile>
     </Link>
@@ -215,16 +213,16 @@
       <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Source.def</ModuleDefinitionFile>
     </Link>
     <PostBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">xcopy /Y  "Z:\diktamen\libopusenc\win32\VS2015\win32\DebugDLL\opusenc.dll" "Z:\diktamen\java\DiktaNet\natives\win32-x86\opusenc.dll*"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">xcopy /Y  "c:\libraries\libopusenc\win32\VS2015\Win32\DebugDLL\opusenc.dll" "c:\asemat\java\DiktaNet\natives\win32-x86\opusenc_debug.dll*"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">xcopy /Y  "Z:\diktamen\libopusenc\win32\VS2015\x64\DebugDLL\opusenc.dll" "Z:\diktamen\java\DiktaNet\natives\win32-x86-64\opusenc.dll*"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">xcopy /Y  "c:\libraries\libopusenc\win32\VS2015\x64\DebugDLL\opusenc.dll" "c:\asemat\java\DiktaNet\natives\win32-x86-64\opusenc_debug.dll*"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">xcopy /Y  "Z:\diktamen\libopusenc\win32\VS2015\win32\ReleaseDLL\opusenc.dll" "Z:\diktamen\java\DiktaNet\natives\win32-x86\opusenc.dll*"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">xcopy /Y  "C:\libraries\libopusenc\win32\VS2015\Win32\ReleaseDLL\opusenc.dll" "c:\asemat\java\DiktaNet\natives\win32-x86\opusenc.dll*"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">xcopy /Y  "Z:\diktamen\libopusenc\win32\VS2015\x64\ReleaseDLL\opusenc.dll" "Z:\diktamen\java\DiktaNet\natives\win32-x86-64\opusenc.dll*"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">xcopy /Y  "C:\libraries\libopusenc\win32\VS2015\x64\ReleaseDLL\opusenc.dll" "c:\asemat\java\DiktaNet\natives\win32-x86-64\opusenc.dll*"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
