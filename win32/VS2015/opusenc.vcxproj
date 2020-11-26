@@ -169,6 +169,8 @@
       <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">MultiThreaded</RuntimeLibrary>
       <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">MultiThreaded</RuntimeLibrary>
       <FloatingPointExceptions Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">false</FloatingPointExceptions>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">OldStyle</DebugInformationFormat>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">OldStyle</DebugInformationFormat>
     </ClCompile>
     <Lib>
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
@@ -199,6 +201,7 @@
     </Link>
     <ClCompile>
       <FloatingPointExceptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</FloatingPointExceptions>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">OldStyle</DebugInformationFormat>
     </ClCompile>
     <Link>
       <ModuleDefinitionFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Source.def</ModuleDefinitionFile>
@@ -224,6 +227,9 @@
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">xcopy /Y  "C:\libraries\libopusenc\win32\VS2015\x64\ReleaseDLL\opusenc.dll" "c:\asemat\java\DiktaNet\natives\win32-x86-64\opusenc.dll*"</Command>
     </PostBuildEvent>
+    <ClCompile>
+      <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">OldStyle</DebugInformationFormat>
+    </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
