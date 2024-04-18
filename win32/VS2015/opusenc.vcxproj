@@ -143,14 +143,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">
-    <LibraryPath>$(ProjectDir)..\..\..\opus\win32\VS2015\win32\release;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)..\..\..\opus\bin\build64\release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
-    <LibraryPath>$(ProjectDir)..\..\..\opus\win32\VS2015\x64\debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)..\..\..\opus\bin\build64\debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
-    <LibraryPath>$(ProjectDir)..\..\..\opus\win32\VS2015\x64\release;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(ProjectDir)..\..\..\opus\bin\build64\release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
