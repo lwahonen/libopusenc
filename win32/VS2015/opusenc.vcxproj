@@ -235,6 +235,9 @@
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">OldStyle</DebugInformationFormat>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">OldStyle</DebugInformationFormat>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='DebugDLL|ARM64'">OldStyle</DebugInformationFormat>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|ARM64'">Guard</ControlFlowGuard>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|Win32'">Guard</ControlFlowGuard>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">Guard</ControlFlowGuard>
     </ClCompile>
     <Lib>
       <AdditionalOptions>/ignore:4221 %(AdditionalOptions)</AdditionalOptions>
@@ -304,6 +307,15 @@
     <ClCompile>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">OldStyle</DebugInformationFormat>
       <DebugInformationFormat Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <ClCompile>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">Guard</ControlFlowGuard>
+    </ClCompile>
+    <ClCompile>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Guard</ControlFlowGuard>
+    </ClCompile>
+    <ClCompile>
+      <ControlFlowGuard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Guard</ControlFlowGuard>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
